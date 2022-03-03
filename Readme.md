@@ -1,5 +1,5 @@
 CS_FHIR info.
-A .NET Core CLI project to connect and interact with a FHIR server.
+A .NET Core project to connect and interact with a FHIR server.
 # Documentation
 
 ## More Information
