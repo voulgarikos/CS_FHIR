@@ -3,6 +3,8 @@ A .NET Core project to connect and interact with a FHIR server.
 # CS_FHIR Info
 Repository that contains a .NET  C# application. The application creates a client, connects to FHIR&reg; server and performs CRUD actions
 
+In the Program.cs file is a basic code for connecting and extracting patient data.
+The Program_v2.cs file is a more sofisticated version with better functionality and the complete set of CRUD actions.
 
 
 ##Resources
