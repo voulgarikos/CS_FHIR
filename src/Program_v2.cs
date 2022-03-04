@@ -16,9 +16,14 @@ public static class Program_v2
         {"Local", "http://localhost:8080/fhir"},
     };
 
-    private static readonly string _fhirServer = _fhirServers["PublicVonk"]; //create the desired server connection
-
-    static void Main(string[] args)
+    private static readonly string _fhirServer = _fhirServers["Local"]; //create the desired server connection
+    
+    
+    /// <summary>
+    /// Main entry point for program
+    /// </summary>
+    /// <param name="args"></param>
+    static int Main(string[] args)                          // int type, return 0 for cmd line control - void also ok but returns nothing
     {
         FhirClient fhirClient = new FhirClient(_fhirServer) //create a client and connect to fhir server
         {
@@ -29,9 +34,19 @@ public static class Program_v2
         List<Patient> patients = GetPatients(fhirClient); //call the function to populate the list
 
         System.Console.WriteLine($"Found {patients.Count} patients!"); //test if smth found
-
+        
+        return 0;
     }
-
+    
+    /// <summary>
+    /// Create a list of Patients matching specified criteria
+    /// </summary>
+    /// <param name="fhirClient"></param>
+    /// <param name="patientCriteria"></param>
+    /// <param name="maxPatients">The max numb of patients to return (def:20)</param>
+    /// <param name="onlyWithEncounters">Flag to only return patients with encounters (def:false)</param>
+    /// <returns></returns>//  
+    
         static List<Patient> GetPatients(
             FhirClient fhirClient,
             string[] patientCriteria = null,
