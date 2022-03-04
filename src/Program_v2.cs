@@ -31,11 +31,120 @@ public static class Program_v2
             PreferredReturn = Prefer.ReturnRepresentation
         };
 
+        CreatePatient(fhirClient, "Doe", "John"); //call function to create patient
+
         List<Patient> patients = GetPatients(fhirClient); //call the function to populate the list
 
         System.Console.WriteLine($"Found {patients.Count} patients!"); //test if smth found
         
+        string firstId = null;
+        foreach (Patient patient in patients)       //procedure that stores the id of the patient first created and delete the others
+        {
+            if (string.IsNullOrEmpty(firstId))
+            {
+                firstId = patient.Id;
+                continue;
+            }
+            DeletePatient(fhirClient, patient.Id);
+        }
+
+        Patient firstPatient = ReadPatient(fhirClient, firstId);
+
+        System.Console.WriteLine($"Read back Patient: {firstPatient.Name[0].ToString()}");      
+
+
+        Patient updated = UpdatePatient(fhirClient, firstPatient);
+
+        Patient readFinal = ReadPatient(fhirClient, firstId);
+
         return 0;
+    }
+    /// <summary>
+    /// function that reads a patient from fhir Server specified by id
+    /// </summary>
+    /// <param name="fhirClient"></param>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    static Patient ReadPatient(
+        FhirClient fhirClient,
+        string id)
+    {
+        
+            if (string.IsNullOrEmpty(id))                       //validation if exists the patient id
+            {
+                throw new ArgumentNullException(nameof(id));
+            }
+
+            return fhirClient.Read<Patient>($"Patient/{id}");
+
+    }
+    /// <summary>
+    /// Update a patient to add more info
+    /// </summary>
+    /// <param name="fhirClient"></param>
+    /// <param name="patient"></param>
+
+    static Patient UpdatePatient(
+        FhirClient fhirClient,
+        Patient patient)
+        {
+            patient.Telecom.Add(new ContactPoint()          //add phone numb in contactpoint list
+            {
+                System = ContactPoint.ContactPointSystem.Phone,
+                Value = "555.555.555",
+                Use = ContactPoint.ContactPointUse.Home,
+            });
+
+            patient.Gender = AdministrativeGender.Unknown;
+           return fhirClient.Update<Patient>(patient);        //
+        }
+    
+    /// <summary>
+    /// Function to delete a patient specified by id
+    /// </summary>
+    /// <param name="fhirClient"></param>
+    /// <param name="id"></param>
+    static void DeletePatient(
+        FhirClient fhirClient,
+        string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                throw new ArgumentNullException(nameof(id));        ////validation if exists the patient id
+            }
+        fhirClient.Delete($"Patient/{id}");
+        System.Console.WriteLine($"Deleted Patient with ID: {id}");
+        }
+    /// <summary>
+    /// function CreatePatient that creates an fhir patient resource with specified params
+    /// </summary>
+    /// <param name="fhirClient"></param>
+    /// <param name="familyName"></param>
+    /// <param name="givenName"></param>
+    static void CreatePatient(
+        FhirClient fhirClient,
+        string familyName,
+        string givenName)        //create fhir resourse Patient
+    {
+        Patient toCreate = new Patient()
+        {
+            Name = new List<HumanName>()
+            {
+               new HumanName() 
+               {
+                   Family = familyName,
+                   Given = new List<string>()
+                   {
+                       givenName,
+                   },
+
+               }
+            },
+            BirthDateElement = new Date(1970, 01, 01),
+        };
+
+        fhirClient.Create<Patient>(toCreate);       //cmd that creates the patient
+
     }
     
     /// <summary>
