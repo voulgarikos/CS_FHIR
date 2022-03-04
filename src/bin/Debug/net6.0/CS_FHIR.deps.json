@@ -1,0 +1,176 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "CS_FHIR/1.0.0": {
+        "dependencies": {
+          "Hl7.Fhir.R4": "3.8.0"
+        },
+        "runtime": {
+          "CS_FHIR.dll": {}
+        }
+      },
+      "Hl7.Fhir.ElementModel/3.8.0": {
+        "dependencies": {
+          "Hl7.Fhir.Support": "3.8.0"
+        },
+        "runtime": {
+          "lib/net5.0/Hl7.Fhir.ElementModel.dll": {
+            "assemblyVersion": "3.8.0.0",
+            "fileVersion": "3.8.0.0"
+          }
+        }
+      },
+      "Hl7.Fhir.R4/3.8.0": {
+        "dependencies": {
+          "Hl7.Fhir.Serialization": "3.8.0",
+          "Hl7.Fhir.Support": "3.8.0",
+          "Hl7.Fhir.Support.Poco": "3.8.0",
+          "Hl7.FhirPath": "3.8.0",
+          "System.ComponentModel.Annotations": "5.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/Hl7.Fhir.R4.Core.dll": {
+            "assemblyVersion": "3.8.0.0",
+            "fileVersion": "3.8.0.0"
+          }
+        }
+      },
+      "Hl7.Fhir.Serialization/3.8.0": {
+        "dependencies": {
+          "Hl7.Fhir.ElementModel": "3.8.0",
+          "Hl7.Fhir.Support": "3.8.0",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "lib/net5.0/Hl7.Fhir.Serialization.dll": {
+            "assemblyVersion": "3.8.0.0",
+            "fileVersion": "3.8.0.0"
+          }
+        }
+      },
+      "Hl7.Fhir.Support/3.8.0": {
+        "dependencies": {
+          "System.Reflection.Emit.Lightweight": "4.7.0"
+        },
+        "runtime": {
+          "lib/net5.0/Hl7.Fhir.Support.dll": {
+            "assemblyVersion": "3.8.0.0",
+            "fileVersion": "3.8.0.0"
+          }
+        }
+      },
+      "Hl7.Fhir.Support.Poco/3.8.0": {
+        "dependencies": {
+          "Hl7.Fhir.ElementModel": "3.8.0",
+          "Hl7.Fhir.Serialization": "3.8.0",
+          "Hl7.Fhir.Support": "3.8.0",
+          "Hl7.FhirPath": "3.8.0",
+          "System.ComponentModel.Annotations": "5.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/Hl7.Fhir.Support.Poco.dll": {
+            "assemblyVersion": "3.8.0.0",
+            "fileVersion": "3.8.0.0"
+          }
+        }
+      },
+      "Hl7.FhirPath/3.8.0": {
+        "dependencies": {
+          "Hl7.Fhir.ElementModel": "3.8.0",
+          "Hl7.Fhir.Support": "3.8.0"
+        },
+        "runtime": {
+          "lib/net5.0/Hl7.FhirPath.dll": {
+            "assemblyVersion": "3.8.0.0",
+            "fileVersion": "3.8.0.0"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.25517"
+          }
+        }
+      },
+      "System.ComponentModel.Annotations/5.0.0": {},
+      "System.Reflection.Emit.Lightweight/4.7.0": {}
+    }
+  },
+  "libraries": {
+    "CS_FHIR/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Hl7.Fhir.ElementModel/3.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-H1O3OpQvZy7Zb4VCblG0F4YDi3Bw9ijwCG4taqkWKYQzVtA3HF/FSBPGuIS5ukZHX7mirevFfb7iALbBW9BK2A==",
+      "path": "hl7.fhir.elementmodel/3.8.0",
+      "hashPath": "hl7.fhir.elementmodel.3.8.0.nupkg.sha512"
+    },
+    "Hl7.Fhir.R4/3.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NGJfuADpE22HDE5/e9cwnNzF0ksLa8D3qoiDVzffNNAbAwQ8zSwqeAXXxBna/RIT3ThSf+IEFzkOtiAZY2cJXQ==",
+      "path": "hl7.fhir.r4/3.8.0",
+      "hashPath": "hl7.fhir.r4.3.8.0.nupkg.sha512"
+    },
+    "Hl7.Fhir.Serialization/3.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CNJB1RDdHcSdDh2i733b1gH3NK0c1vbcD9Iy24NRUVAkQ3iYiEeo/U4tFCzRWZ1m5DU6yz47EgtdifPfyqLfVQ==",
+      "path": "hl7.fhir.serialization/3.8.0",
+      "hashPath": "hl7.fhir.serialization.3.8.0.nupkg.sha512"
+    },
+    "Hl7.Fhir.Support/3.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-owaFXj+j9iRQTXwGLqCbOLrO/y13510Fdl5XnSREmZYLIGuU0YBqfr44d4SLgGfTzIZAjUVKgctHJ4aPfA9YvA==",
+      "path": "hl7.fhir.support/3.8.0",
+      "hashPath": "hl7.fhir.support.3.8.0.nupkg.sha512"
+    },
+    "Hl7.Fhir.Support.Poco/3.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mlQ6VdhsSD0fL0e/3RHhagXYcSPzye7VaghkRP2M/dlSqbfFiom4o2kcXoP9XQbtuA+KS4Xe1/60wJryfiSfFA==",
+      "path": "hl7.fhir.support.poco/3.8.0",
+      "hashPath": "hl7.fhir.support.poco.3.8.0.nupkg.sha512"
+    },
+    "Hl7.FhirPath/3.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4xcM3GmQBTOyssHNXhj0wV5Q63q3OdvXzY/gDNTPGrh9oFvFHkTPvWpqz9o/MP8YbSx6eRZWKmSrtgDnvFgyWg==",
+      "path": "hl7.fhirpath/3.8.0",
+      "hashPath": "hl7.fhirpath.3.8.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "path": "newtonsoft.json/13.0.1",
+      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
+    },
+    "System.ComponentModel.Annotations/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dMkqfy2el8A8/I76n2Hi1oBFEbG1SfxD2l5nhwXV3XjlnOmwxJlQbYpJH4W51odnU9sARCSAgv7S3CyAFMkpYg==",
+      "path": "system.componentmodel.annotations/5.0.0",
+      "hashPath": "system.componentmodel.annotations.5.0.0.nupkg.sha512"
+    },
+    "System.Reflection.Emit.Lightweight/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-a4OLB4IITxAXJeV74MDx49Oq2+PsF6Sml54XAFv+2RyWwtDBcabzoxiiJRhdhx+gaohLh4hEGCLQyBozXoQPqA==",
+      "path": "system.reflection.emit.lightweight/4.7.0",
+      "hashPath": "system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
+    }
+  }
+}
